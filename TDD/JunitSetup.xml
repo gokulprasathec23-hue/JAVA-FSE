@@ -1,0 +1,8 @@
+## Junit Setup
+## if you are using the Maven Builtin tool therfore open the pom file in that folder structure.And add the code in the dependency 
+## Code
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
