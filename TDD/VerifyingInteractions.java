@@ -1,0 +1,65 @@
+public interface NotificationService {
+    void sendNotification(String message);
+}
+
+public class OrderService {
+    private NotificationService notificationService;
+    public OrderService(NotificationService notificationService) {
+        this.notificationService = notificationService;
+    }
+    public void placeOrder() {
+        System.out.println("Order placed successfully.");
+        notificationService.sendNotification("Order Confirmed");
+    }
+}
+
+import org.junit.jupiter.api.Test;
+import static org.mockito.Mockito.*;
+public class OrderServiceTest {
+    @Test
+    public void testVerifyInteraction() {
+        NotificationService notificationService = mock(NotificationService.class);
+        OrderService orderService = new OrderService(notificationService);
+        orderService.placeOrder();
+        verify(notificationService).sendNotification("Order Confirmed");
+    }
+}
+##Xml file given for the references
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>MockitoExercise</artifactId>
+    <version>1.0</version>
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.10.2</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>5.12.0</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>
