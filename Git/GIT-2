@@ -1,0 +1,61 @@
+# Git Ignore Lab
+## Commands Used
+### Open project
+```bash
+cd GitDemo
+```
+### Create a log file
+```bash
+echo "Error Log" > error.log
+```
+### Create a log folder
+```bash
+mkdir log
+``
+### Create a file inside log folder
+```bash
+echo "Sample Log" > log/test.txt
+```
+### Create .gitignore file
+```bash
+touch .gitignore
+```
+or (Windows)
+```bash
+echo. > .gitignore
+```
+### Open .gitignore
+```bash
+notepad .gitignore
+```
+### Add the following lines
+```text
+*.log
+log/
+```
+### Check repository status
+```bash
+git status
+```
+### Add .gitignore
+```bash
+git add .gitignore
+```
+### Commit
+```bash
+git commit -m "Added .gitignore"
+```
+### Push to GitHub
+```bash
+git push origin main
+``
+---
+## Files Created
+- welcome.txt
+- error.log
+- log/
+- .gitignore
+## Result
+- All `.log` files are ignored.
+- `log` folder is ignored.
+- Only required files are tracked by Git.
