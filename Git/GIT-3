@@ -1,0 +1,109 @@
+# Git Branching and Merging Lab
+## Branch Creation
+### Create a new branch
+```bash
+git branch GitNewBranch
+```
+### Check available branches
+```bash
+git branch
+```
+To view local and remote branches:
+```bash
+git branch -a
+```
+### Switch to the new branch
+```bash
+git checkout GitNewBranch
+```
+---
+## Create a Sample File
+Create a file:
+```bash
+echo "Branch File" > branch.txt
+```
+Check the file:
+```bash
+cat branch.txt
+```
+---
+## Save the Changes
+Add the file:
+```bash
+git add branch.txt
+```
+Commit the changes:
+```bash
+git commit -m "Added branch file"
+``
+Check repository status:
+```bash
+git status
+```
+---
+## Merge with Main Branch
+Switch to the main branch:
+```bash
+git checkout main
+```
+If your repository uses `master`:
+```bash
+git checkout master
+```
+---
+## Compare Branches
+Show command-line differences:
+```bash
+git diff main GitNewBranch
+```
+or
+```bash
+git diff master GitNewBranch
+```
+---
+## Merge Branch
+Merge the new branch into the main branch:
+```bash
+git merge GitNewBranch
+```
+---
+## View Commit History
+```bash
+git log --oneline --graph --decorate
+```
+---
+## Delete the Branch
+```bash
+git branch -d GitNewBranch
+```
+---
+## Final Check
+```bash
+git status
+```
+---
+## Commands Used
+```bash
+git branch GitNewBranch
+git branchgit branch -a
+git checkout GitNewBranch
+echo "Branch File" > branch.txt
+git add branch.txt
+git commit -m "Added branch file"
+git status
+git checkout main
+git diff main GitNewBranch
+git merge GitNewBranch
+git log --oneline --graph --decorate
+git branch -d GitNewBranch
+git status
+```
+---
+## Result
+- Created a new branch named **GitNewBranch**.
+- Added a sample file in the branch.
+- Committed the changes successfully.
+- Compared the branch with the main branch.
+- Merged the branch into the main branch.
+- Verified the commit history.
+- Deleted the branch after merging.
