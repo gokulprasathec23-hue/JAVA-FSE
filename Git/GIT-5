@@ -1,0 +1,62 @@
+# Git Cleanup and Push to Remote Repository
+## Check Repository Status
+```bash
+git status
+```
+---
+## View Available Branches
+```bash
+git branch
+```
+To view both local and remote branches:
+```bash
+git branch -a
+```
+---
+## Switch to Master Branch
+```bash
+git checkout master
+```
+If your repository uses `main`:
+```bash
+git checkout main
+```
+---
+## Pull Latest Changes
+For master:
+```bash
+git pull origin master
+```
+For main:
+```bash
+git pull origin main
+```
+---
+## Push Local Changes
+For master:
+```bash
+git push origin master
+```
+For main:
+```bash
+git push origin main
+```
+---
+## Verify Changes
+Open the GitHub repository and refresh the page to verify that the latest commits are available.
+---
+## Commands Used
+```bash
+git status
+git branch
+git branch -a
+git checkout master
+git pull origin master
+git push origin master
+```
+## Result
+- Verified the repository was in a clean state.
+- Listed all available branches.
+- Pulled the latest changes from the remote repository.
+- Pushed local commits to the remote repository.
+- Verified that the changes were updated successfully on GitHub.
