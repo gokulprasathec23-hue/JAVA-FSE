@@ -1,0 +1,148 @@
+# Git Merge Conflict Resolution Lab
+## Verify Repository Status
+```bash
+git status
+```
+---
+## Create a New Branch
+```bash
+git branch GitWork
+git checkout GitWork
+```
+---
+## Create hello.xml
+```bash
+echo "<message>Hello from GitWork</message>" > hello.xml
+```
+Check the status:
+```bash
+git status
+```
+---
+## Commit Changes
+```bash
+git add hello.xml
+git commit -m "Added hello.xml in GitWork"
+```
+---
+## Switch to Master
+``bash
+git checkout master
+```
+or
+```bash
+git checkout main
+```
+---
+## Create hello.xml with Different Content
+```bash
+echo "<message>Hello from Master</message>" > hello.xml
+```
+Check the status:
+```bash
+git status
+```
+Commit the changes:
+```bash
+git add hello.xml
+git commit -m "Added hello.xml in master"
+```
+---
+## View Commit History
+```bash
+git log --oneline --graph --decorate --all
+```
+---
+## Compare Branches
+```bash
+git diff master GitWork
+```
+or
+```bash
+git diff main GitWork
+```
+---
+## Merge Branch
+```bash
+git merge GitWork
+```
+If a merge conflict occurs, open **hello.xml** and remove the conflict markers:
+```text
+<<<<<<< HEAD
+Master Content
+GitWork Content
+>>>>>>> GitWork
+```
+Edit the file with the required content and save it.
+---
+
+## Complete Conflict Resolution
+
+```bash
+git add hello.xml
+git commit -m "Resolved merge conflict"
+```
+---
+## Ignore Backup Files
+Open `.gitignore`
+```bash
+notepad .gitignore
+```
+Add:
+```text
+*.bak
+```
+Save the file.
+Commit the changes:
+```bash
+git add .gitignore
+git commit -m "Updated .gitignore"
+```
+---
+## View Branches
+```bash
+git branch
+```
+---
+## Delete Merged Branch
+```bash
+git branch -d GitWork
+```
+---
+## View Final Log
+```bash
+git log --oneline --graph --decorate
+```
+---
+## Commands Used
+```bash
+git status
+git branch GitWork
+git checkout GitWork
+echo "<message>Hello from GitWork</message>" > hello.xml
+git add hello.xml
+git commit -m "Added hello.xml in GitWork"
+git checkout master
+echo "<message>Hello from Master</message>" > hello.xml
+git add hello.xml
+git commit -m "Added hello.xml in master"
+git log --oneline --graph --decorate --all
+git diff master GitWork
+git merge GitWork
+git add hello.xml
+git commit -m "Resolved merge conflict"
+git add .gitignore
+git commit -m "Updated .gitignore"
+git branch
+git branch -d GitWork
+git log --oneline --graph --decorate
+```
+## Result
+- Verified repository status.
+- Created the **GitWork** branch.
+- Added and modified **hello.xml** in both branches.
+- Merged the branch into **master**.
+- Resolved the merge conflict successfully.
+- Updated the **.gitignore** file.
+- Deleted the merged branch.
+- Verified the final commit history.
